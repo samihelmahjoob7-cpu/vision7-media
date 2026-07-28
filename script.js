@@ -1,3 +1,4 @@
+
 // =========================
 // Scroll Portfolio
 // =========================
@@ -118,6 +119,83 @@ function closeVideo() {
 // =========================
 
 document.addEventListener("DOMContentLoaded", () => {
+// ==========================
+// Hamburger Menu
+// ==========================
+
+const menuToggle = document.getElementById("menu-toggle");
+const navMenu = document.getElementById("nav-menu");
+
+if (menuToggle && navMenu) {
+
+    menuToggle.addEventListener("click", () => {
+
+   
+
+     
+
+       navMenu.classList.toggle("active");
+
+document.body.style.overflow =
+navMenu.classList.contains("active")
+? "hidden"
+: "";
+
+        const icon = menuToggle.querySelector("i");
+
+        if (navMenu.classList.contains("active")) {
+
+            icon.classList.remove("fa-bars");
+            icon.classList.add("fa-xmark");
+
+        } else {
+
+            icon.classList.remove("fa-xmark");
+            icon.classList.add("fa-bars");
+
+        }
+
+    });
+
+    document.querySelectorAll("#nav-menu a").forEach(link => {
+
+        link.addEventListener("click", () => {
+
+            navMenu.classList.remove("active");
+
+document.body.style.overflow = "";
+
+const icon = menuToggle.querySelector("i");
+
+icon.classList.remove("fa-xmark");
+icon.classList.add("fa-bars");
+        });
+
+    });
+// ==========================
+// Close menu when clicking outside
+// ==========================
+
+
+
+// ==========================
+// Close menu when resizing
+// ==========================
+
+
+}
+// ==========================
+// Close menu when clicking outside
+// ==========================
+
+
+
+// ==========================
+// Close menu on desktop
+// ==========================
+
+
+
 
     // ---------- Theme ----------
 
@@ -384,4 +462,72 @@ window.addEventListener("load", () => {
 
     }, 2200);
 
+});
+
+// ==========================
+// Language Menu
+// ==========================
+
+const langBtn = document.getElementById("lang-btn");
+const langMenu = document.querySelector(".language-menu");
+
+if (langBtn && langMenu) {
+
+    langBtn.addEventListener("click", () => {
+        langMenu.classList.toggle("active");
+    });
+
+    document.addEventListener("click", (e) => {
+
+        if (!langBtn.contains(e.target) && !langMenu.contains(e.target)) {
+            langMenu.classList.remove("active");
+        }
+
+    });
+
+}
+
+// ==========================
+// Animated Counters
+// ==========================
+
+const counters = document.querySelectorAll(".counter");
+
+const counterObserver = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if (!entry.isIntersecting) return;
+
+        const counter = entry.target;
+        const target = +counter.dataset.target;
+
+        let count = 0;
+        const increment = Math.ceil(target / 60);
+
+        const updateCounter = () => {
+
+            count += increment;
+
+            if (count >= target) {
+                counter.textContent = target + "+";
+            } else {
+                counter.textContent = count;
+                requestAnimationFrame(updateCounter);
+            }
+
+        };
+
+        updateCounter();
+
+        counterObserver.unobserve(counter);
+
+    });
+
+}, {
+    threshold: 0.5
+});
+
+counters.forEach(counter => {
+    counterObserver.observe(counter);
 });

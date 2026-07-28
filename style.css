@@ -575,28 +575,34 @@ background:rgba(255,255,255,0.95);
 }
 
 #theme-toggle{
-width:50px;
-height:50px;
-border-radius:50%;
-padding:0;
-font-size:22px;
-display:flex;
-justify-content:center;
-align-items:center;
+
+    background: rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.2);
+
+    color:#fff;
+
+    padding:8px 16px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    transition:.3s;
+
 }
 
-#theme-toggle{
-width:50px;
-height:50px;
-border:none;
-border-radius:50%;
-cursor:pointer;
-font-size:22px;
-display:flex;
-justify-content:center;
-align-items:center;
-padding:0;
-margin-top:0;
+#theme-toggle:hover{
+
+    background:#7b2cbf;
+
+    transform:translateY(-2px);
+
 }
 
 body.light-mode{
@@ -1600,15 +1606,7 @@ border-radius:0 0 18px 18px;
 z-index:999;
 
 }
-.header-actions{
-
-display:flex;
-
-align-items:center;
-
-gap:15px;
-
-}
+.header-actions
 
 #nav-menu.active{
 
@@ -1947,4 +1945,160 @@ color:#d946ef;
 
 .language-switcher button.active{
     color:#d946ef;
+}
+.header-actions{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+.language-switcher{
+    position:relative;
+}
+
+#lang-btn{
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.2);
+    color:#fff;
+    padding:8px 14px;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+.language-menu{
+    position:absolute;
+    top:45px;
+    right:0;
+    background:#151933;
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:12px;
+    overflow:hidden;
+    display:none;
+    min-width:170px;
+    z-index:999;
+}
+
+.language-menu.active{
+    display:block;
+}
+
+.language-menu button{
+    width:100%;
+    padding:12px;
+    border:none;
+    background:none;
+    color:white;
+    cursor:pointer;
+    text-align:left;
+}
+
+.language-menu button:hover{
+    background:#7b2cbf;
+}
+
+/* ==========================
+   Statistics Section
+========================== */
+
+#stats{
+
+    padding:100px 8%;
+    text-align:center;
+
+}
+
+#stats h2{
+
+    font-size:2.3rem;
+    margin-bottom:60px;
+    color:#fff;
+
+}
+
+.stats-container{
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+
+}
+
+.stat-card{
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:20px;
+
+    padding:35px 20px;
+
+    transition:.35s;
+
+    backdrop-filter:blur(12px);
+
+}
+
+.stat-card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:#c77dff;
+
+    box-shadow:0 0 30px rgba(199,125,255,.35);
+
+}
+
+.stat-card h3{
+
+    font-size:3rem;
+
+    color:#c77dff;
+
+    margin-bottom:10px;
+
+}
+
+.stat-card p{
+
+    color:#d8d8d8;
+
+    font-size:1rem;
+
+}
+/* ==========================
+   Download CV Button
+========================== */
+
+.cv-btn{
+
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+
+    margin-top:20px;
+
+    padding:14px 28px;
+
+    border-radius:12px;
+
+    background:#7b2cbf;
+
+    color:#fff;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.cv-btn:hover{
+
+    transform:translateY(-4px);
+
+    background:#9d4edd;
+
+    box-shadow:0 0 25px rgba(157,78,221,.5);
+
 }
