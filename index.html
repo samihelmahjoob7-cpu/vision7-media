@@ -74,6 +74,8 @@ Vision7 Media
     <a href="#services" data-fr="Services" data-en="Services">Services</a>
 
     <a href="#portfolio" data-fr="Portfolio" data-en="Portfolio">Portfolio</a>
+     <a href="#reviews">Avis</a>
+
 
     <a href="#contact" data-fr="Contact" data-en="Contact">Contact</a>
 
@@ -118,7 +120,7 @@ Vision7 Media
         </p>
 
         <button onclick="scrollToPortfolio()">
-            Voir mes projets
+            Voir mon Portfolio
         </button>
         <a href="Samih-El-Mahjoub-CV.pdf"
    class="cv-btn"
@@ -630,7 +632,121 @@ As the journey continues, the line between truth and illusion begins to fade. Ev
 
 </div>
 </section>
+<section id="reviews">
 
+    <h2>Ce qu'ils pensent de mon travail</h2>
+
+    <div class="reviews-container">
+
+        <div class="review-card active">
+
+            <div class="review-avatar">
+                OB
+            </div>
+
+            <div class="stars">
+                ⭐⭐⭐⭐⭐
+            </div>
+
+            <p class="review-text">
+                "Travail de grande qualité. Très professionnel, créatif et toujours à l'écoute. Je recommande vivement."
+            </p>
+
+            <h4>Oussama B.</h4>
+
+            <span>CEO - Success Visa</span>
+
+        </div>
+
+        <div class="review-dots">
+
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+
+        </div>
+
+    </div>
+    <section id="avis" class="reviews-section">
+
+    <div class="reviews-container">
+
+        <div class="reviews-header">
+            <h2>⭐ Laisser un avis</h2>
+            <p>
+                Votre retour nous aide à améliorer votre expérience.
+            </p>
+        </div>
+
+        <form id="review-form" class="review-form">
+
+            <div class="input-group">
+                <i class="fa-solid fa-user"></i>
+                <input
+                    type="text"
+                    id="review-name"
+                    placeholder="Votre nom"
+                    required
+                >
+            </div>
+
+            <div class="stars-container">
+
+                <span class="star" data-value="1">★</span>
+                <span class="star" data-value="2">★</span>
+                <span class="star" data-value="3">★</span>
+                <span class="star" data-value="4">★</span>
+                <span class="star" data-value="5">★</span>
+
+            </div>
+
+            <input type="hidden" id="review-rating" value="5">
+
+            <div class="input-group textarea-group">
+                <i class="fa-solid fa-comment"></i>
+
+                <textarea
+                    id="review-comment"
+                    placeholder="Votre commentaire..."
+                    required
+                ></textarea>
+
+            </div>
+
+              <button
+    id="send-review"
+    type="submit"
+    class="review-btn">
+
+    <i class="fa-solid fa-paper-plane"></i>
+    Envoyer votre avis
+
+</button>
+        </form>
+        <div class="reviews-summary">
+
+    <div class="average-rating" id="average-rating">
+        ⭐⭐⭐⭐⭐ 5.0
+    </div>
+
+    <p id="reviews-count">
+        Basé sur 0 avis
+    </p>
+
+</div>
+<div class="reviews-list" id="reviews-list">
+
+    <div class="loading-reviews">
+        Chargement des avis...
+    </div>
+
+</div>
+    </div>
+
+</section>
+</section>
+
+</section>
 <section id="contact" class="contact">
 
     <h2>Contactez-moi</h2>
@@ -749,6 +865,39 @@ color:"#c77dff"
 
 </div>
 <div class="cursor-glow"></div>
+
+<script type="module" src="firebase.js"></script>
 <script src="script.js"></script>
+<div id="success-popup" class="success-popup">
+
+    <div class="success-box">
+
+        <div class="success-icon">
+            <i class="fa-solid fa-check"></i>
+        </div>
+
+        <h2>Merci pour votre avis !</h2>
+
+        <h3>
+            Votre avis a été envoyé avec succès.
+        </h3>
+
+        <p>
+            Votre avis sera publié après vérification.
+        </p>
+
+        <p>
+            Merci de partager votre expérience.
+        </p>
+
+        <button id="close-success">
+            Retour au Portfolio
+        </button>
+
+    </div>
+
+</div>
+
 </body>
-</html> 
+
+</html>

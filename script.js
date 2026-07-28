@@ -531,3 +531,64 @@ const counterObserver = new IntersectionObserver((entries) => {
 counters.forEach(counter => {
     counterObserver.observe(counter);
 });
+// ==========================
+// Interactive Rating Stars
+// ==========================
+
+const stars = document.querySelectorAll(".star");
+const ratingInput = document.getElementById("review-rating");
+
+if (stars.length) {
+
+    stars.forEach((star) => {
+
+        star.addEventListener("click", () => {
+
+            const value = star.dataset.value;
+
+            ratingInput.value = value;
+
+            stars.forEach((s) => {
+
+                s.classList.remove("active");
+
+                if (s.dataset.value <= value) {
+
+                    s.classList.add("active");
+
+                }
+
+            });
+
+        });
+
+        star.addEventListener("mouseenter", () => {
+
+            const value = star.dataset.value;
+
+            stars.forEach((s) => {
+
+                s.style.color =
+                    s.dataset.value <= value ? "#FFD700" : "#555";
+
+            });
+
+        });
+
+    });
+
+    document.querySelector(".stars-container")
+        .addEventListener("mouseleave", () => {
+
+            const value = ratingInput.value;
+
+            stars.forEach((s) => {
+
+                s.style.color =
+                    s.dataset.value <= value ? "#FFD700" : "#555";
+
+            });
+
+        });
+
+}
