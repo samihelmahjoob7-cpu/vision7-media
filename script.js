@@ -464,7 +464,7 @@ window.addEventListener("load", () => {
             loader.style.pointerEvents = "none";
         }
 
-    }, 1000);
+   }, 350);
 
 });
 

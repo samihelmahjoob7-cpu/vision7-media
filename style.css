@@ -1798,8 +1798,8 @@ align-items:center;
 
 z-index:999999;
 
-transition:opacity .8s ease,
-visibility .8s ease;
+transition:opacity .45s ease,
+visibility .45s ease;
 
 }
 
