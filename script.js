@@ -454,13 +454,17 @@ if (glow) {
 
 window.addEventListener("load", () => {
 
-    const loader = document.getElementById("loader");
-
     setTimeout(() => {
 
-        loader.classList.add("loader-hide");
+       const loader = document.getElementById("loader");
 
-    }, 2200);
+        if(loader){
+            loader.style.opacity = "0";
+            loader.style.visibility = "hidden";
+            loader.style.pointerEvents = "none";
+        }
+
+    }, 1000);
 
 });
 

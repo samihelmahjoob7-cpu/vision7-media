@@ -1887,11 +1887,10 @@ width:100%;
 
 }
 
-.loader-hide{
+.loader.hide{
 
-opacity:0;
-
-visibility:hidden;
+    opacity:0;
+    visibility:hidden;
 
 }
 /*==========================
