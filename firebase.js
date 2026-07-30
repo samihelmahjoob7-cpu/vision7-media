@@ -234,3 +234,64 @@ function formatDate(timestamp){
     });
 
 }
+const translations = {
+
+    fr: {
+
+        "current-lang": "FR",
+
+        "hero-title": "Bienvenue sur mon portfolio"
+
+    },
+
+
+    en: {
+
+        "current-lang": "EN",
+
+        "hero-title": "Welcome to my portfolio"
+
+    }
+
+};
+
+
+function changeLanguage(lang){
+
+    document.querySelectorAll("[data-i18n]").forEach(element => {
+
+        const key = element.getAttribute("data-i18n");
+
+        if(translations[lang][key]){
+
+            element.textContent = translations[lang][key];
+
+        }
+
+    });
+
+
+    localStorage.setItem("language", lang);
+
+    document.getElementById("current-lang").textContent =
+        translations[lang]["current-lang"];
+
+}
+
+
+
+document.querySelectorAll(".language-menu button").forEach(button => {
+
+    button.addEventListener("click", ()=>{
+
+        changeLanguage(button.dataset.lang);
+
+    });
+
+});
+
+
+
+const savedLang = localStorage.getItem("language") || "fr";
+
+changeLanguage(savedLang);

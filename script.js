@@ -229,14 +229,31 @@ icon.classList.add("fa-bars");
 
 const typingText = document.getElementById("typing-text");
 
-const words = [
+let words = [
 
     "Video Editor",
-
     "Motion Designer",
-
     "AI Filmmaker",
+    "Content Creator"
 
+];
+
+
+const wordsFR = [
+
+    "Monteur Vidéo",
+    "Motion Designer",
+    "Réalisateur IA",
+    "Créateur de Contenu"
+
+];
+
+
+const wordsEN = [
+
+    "Video Editor",
+    "Motion Designer",
+    "AI Filmmaker",
     "Content Creator"
 
 ];
@@ -490,7 +507,34 @@ if (langBtn && langMenu) {
     });
 
 }
+// ==========================
+// Typing Language Switch
+// ==========================
 
+document.querySelectorAll(".language-menu button")
+.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        const lang = button.dataset.lang;
+
+        if (lang === "fr") {
+
+            words = wordsFR;
+
+        } else {
+
+            words = wordsEN;
+
+        }
+
+        wordIndex = 0;
+        charIndex = 0;
+        deleting = false;
+
+    });
+
+});
 // ==========================
 // Animated Counters
 // ==========================
