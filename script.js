@@ -229,168 +229,128 @@ icon.classList.add("fa-bars");
 
 const typingText = document.getElementById("typing-text");
 
-let words = [
+if (typingText) {
 
-    "Video Editor",
-    "Motion Designer",
-    "AI Filmmaker",
-    "Content Creator"
+    let words = [
+        "Video Editor",
+        "Motion Designer",
+        "AI Filmmaker",
+        "Content Creator"
+    ];
 
-];
+    let wordIndex = 0;
+    let charIndex = 0;
+    let deleting = false;
 
+    function typeEffect(){
 
-const wordsFR = [
+        const currentWord = words[wordIndex];
 
-    "Monteur Vidéo",
-    "Motion Designer",
-    "Réalisateur IA",
-    "Créateur de Contenu"
+        if(!deleting){
 
-];
+            typingText.textContent =
+            currentWord.substring(0,charIndex+1);
 
+            charIndex++;
 
-const wordsEN = [
+            if(charIndex === currentWord.length){
 
-    "Video Editor",
-    "Motion Designer",
-    "AI Filmmaker",
-    "Content Creator"
+                deleting = true;
 
-];
+                setTimeout(typeEffect,1500);
 
-let wordIndex = 0;
-
-let charIndex = 0;
-
-let deleting = false;
-
-function typeEffect(){
-
-    const currentWord = words[wordIndex];
-
-    if(!deleting){
-
-        typingText.textContent =
-        currentWord.substring(0,charIndex+1);
-
-        charIndex++;
-
-        if(charIndex === currentWord.length){
-
-            deleting = true;
-
-            setTimeout(typeEffect,1500);
-
-            return;
-
-        }
-
-    }else{
-
-        typingText.textContent =
-        currentWord.substring(0,charIndex-1);
-
-        charIndex--;
-
-        if(charIndex === 0){
-
-            deleting = false;
-
-            wordIndex++;
-
-            if(wordIndex >= words.length){
-
-                wordIndex = 0;
-
+                return;
             }
 
+        } else {
+
+            typingText.textContent =
+            currentWord.substring(0,charIndex-1);
+
+            charIndex--;
+
+            if(charIndex === 0){
+
+                deleting = false;
+
+                wordIndex++;
+
+                if(wordIndex >= words.length){
+                    wordIndex = 0;
+                }
+            }
         }
 
+        setTimeout(typeEffect, deleting ? 60 : 120);
     }
 
-    setTimeout(typeEffect,deleting ? 60 : 120);
+    typeEffect();
 
 }
-
-typeEffect();
-
     
-    // ---------- Portfolio Categories ----------
+   // ---------- Portfolio Categories ----------
+console.log("وصلت لكود Portfolio");
+const buttons = document.querySelectorAll(".category-btn");
+const categories = document.querySelectorAll(".video-category");
 
-    const buttons = document.querySelectorAll(".category-btn");
-    const categories = document.querySelectorAll(".video-category");
+console.log("buttons:", buttons.length);
+console.log("categories:", categories.length);
+buttons.forEach(button => {
 
-    buttons.forEach(button => {
+    button.onclick = function(){
 
-    button.addEventListener("click", () => {
+        const target = this.dataset.category;
 
-        buttons.forEach(btn => {
 
-            btn.classList.remove(
-                "active",
-                "active-motion",
-                "active-experience",
-                "active-production",
-                "active-social"
-            );
-
+        // remove active buttons
+        buttons.forEach(btn=>{
+            btn.classList.remove("active");
         });
 
-        categories.forEach(cat => {
 
-            cat.classList.remove("active-category");
+        // hide all categories
+categories.forEach(category => {
+    category.classList.remove("active-category");
+});
 
-        });
+        // activate clicked button
+        this.classList.add("active-" + target);
 
-        button.classList.add("active");
 
-        const category = button.dataset.category;
+        // show selected category
+        const section = document.getElementById(target);
 
-        document
-            .getElementById(category)
-            .classList.add("active-category");
-
-        switch(category){
-
-            case "motion":
-                button.classList.add("active-motion");
-                break;
-
-            case "experience":
-                button.classList.add("active-experience");
-                break;
-
-            case "production":
-                button.classList.add("active-production");
-                break;
-
-            case "social":
-                button.classList.add("active-social");
-                break;
-
+        if(section){
+            section.classList.add("active-category");
         }
 
-    });
+    };
 
 });
+
+
 // ---------- Hover Video ----------
 
 document.querySelectorAll(".portfolio-item").forEach(card => {
 
     const video = card.querySelector(".project-video");
 
-    if (!video) return;
+    if(!video) return;
+
 
     card.addEventListener("mouseenter", () => {
 
         video.currentTime = 0;
-        video.play();
+
+        video.play().catch(()=>{});
 
     });
+
 
     card.addEventListener("mouseleave", () => {
 
         video.pause();
+
         video.currentTime = 0;
 
     });

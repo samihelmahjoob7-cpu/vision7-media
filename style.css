@@ -866,10 +866,13 @@ line-height:1.8;
 }
 
 .portfolio-item{
+
     position:relative;
     overflow:hidden;
     border-radius:18px;
     cursor:pointer;
+    height:230px;
+
 }
 
 .portfolio-item img{
@@ -998,6 +1001,11 @@ line-height:1.8;
     top:0;
 
     left:0;
+
+    width:100%;
+    height:230px;
+
+    object-fit:cover;
 
     opacity:0;
 
@@ -2802,4 +2810,46 @@ color:#bdbdbd;
         transform:translateY(0);
     }
 
+}
+.video-category:not(.active-category){
+    display:none !important;
+}
+
+.video-category.active-category{
+    display:block !important;
+}
+/* Fix Portfolio Cards */
+.portfolio-item {
+    position: relative;
+    height: 230px;
+    overflow: hidden;
+    border-radius: 18px;
+    background: #171717;
+}
+
+.portfolio-item .project-image {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    display: block;
+}
+
+.portfolio-item .project-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 230px;
+
+    object-fit: cover;
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: opacity .35s ease;
+}
+
+.portfolio-item:hover .project-video {
+    opacity: 1;
 }
