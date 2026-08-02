@@ -1010,9 +1010,15 @@ line-height:1.8;
     opacity:0;
 
     pointer-events:none;
+    z-index:2;
+}
+.project-image{
+
+    position:relative;
+
+    z-index:1;
 
 }
-
 .portfolio-item:hover .project-image{
 
     width:100%;
