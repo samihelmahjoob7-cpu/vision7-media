@@ -2862,3 +2862,24 @@ color:#bdbdbd;
 .portfolio-item:hover .project-video {
     opacity: 1;
 }
+.contact-info p{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin:22px 0;
+    font-size:20px;
+    color:#fff;
+}
+
+.contact-info i{
+    width:28px;
+    text-align:center;
+    font-size:22px;
+    color:#c77dff;
+    transition:.3s;
+}
+
+.contact-info p:hover i{
+    color:#ffb703;
+    transform:scale(1.15);
+}
