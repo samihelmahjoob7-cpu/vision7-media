@@ -600,3 +600,48 @@ if (stars.length) {
         });
 
 }
+const words = {
+    fr: [
+        "Monteur Vidéo 🎬",
+        "Motion Designer ✨",
+        "Créateur IA 🤖",
+        "Créateur de contenu 📱",
+        "Visual Branding 🎨"
+    ],
+
+    en: [
+        "Video Editor 🎬",
+        "Motion Graphics Designer ✨",
+        "AI Content Creator 🤖",
+        "Content Creator 📱",
+        "Visual Branding Specialist 🎨"
+    ]
+};
+
+let wordIndex = 0;
+
+function startTyping(){
+
+const lang = localStorage.getItem("language") || "fr";
+
+const typing = document.getElementById("typing-text");
+
+if(!typing) return;
+
+setInterval(()=>{
+
+typing.textContent = words[lang][wordIndex];
+
+wordIndex++;
+
+if(wordIndex>=words[lang].length){
+
+wordIndex=0;
+
+}
+
+},2500);
+
+}
+
+startTyping();

@@ -163,7 +163,12 @@ menu_reviews:
 
 menu_contact:
 "Contact",
+footer_text:
+"© 2026 Vision7 Media - Tous droits réservés",
+hero_intro:
+"Je suis",
 },
+
 
 download_cv:
 "Télécharger mon CV",
@@ -380,6 +385,10 @@ menu_reviews:
 
 menu_contact:
 "Contact",
+footer_text:
+"© 2026 Vision7 Media - All Rights Reserved",
+hero_intro:
+"I'm a",
 }
 };
 

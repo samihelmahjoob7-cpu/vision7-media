@@ -2883,3 +2883,33 @@ color:#bdbdbd;
     color:#ffb703;
     transform:scale(1.15);
 }
+.hero-intro{
+    font-size:20px;
+    color:#d4d4d4;
+    margin-top:15px;
+}
+
+.typing-title{
+    font-size:34px;
+    font-weight:700;
+    color:#8B5CF6;
+    min-height:45px;
+    margin-top:10px;
+}
+
+.cursor{
+    color:#8B5CF6;
+    animation:blink .8s infinite;
+}
+
+@keyframes blink{
+
+0%,100%{
+opacity:1;
+}
+
+50%{
+opacity:0;
+}
+
+}
