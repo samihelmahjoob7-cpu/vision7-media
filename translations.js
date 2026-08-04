@@ -149,6 +149,20 @@ contact_message:
 
 contact_send:
 "Envoyer",
+menu_about:
+"À propos",
+
+menu_services:
+"Services",
+
+menu_portfolio:
+"Portfolio",
+
+menu_reviews:
+"Avis",
+
+menu_contact:
+"Contact",
 },
 
 download_cv:
@@ -352,6 +366,20 @@ contact_message:
 
 contact_send:
 "Send",
+menu_about:
+"About",
+
+menu_services:
+"Services",
+
+menu_portfolio:
+"Portfolio",
+
+menu_reviews:
+"Reviews",
+
+menu_contact:
+"Contact",
 }
 };
 
