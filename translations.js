@@ -167,6 +167,14 @@ footer_text:
 "© 2026 Vision7 Media - Tous droits réservés",
 hero_intro:
 "Je suis",
+tag_worldwide:
+"🌍 Disponible dans le monde",
+
+tag_delivery:
+"⚡ Livraison rapide",
+
+tag_quality:
+"🏆 Résultats Premium",
 },
 
 
@@ -389,7 +397,34 @@ footer_text:
 "© 2026 Vision7 Media - All Rights Reserved",
 hero_intro:
 "I'm a",
+tag_worldwide:
+"🌍 Available Worldwide",
+
+tag_delivery:
+"⚡ Fast Delivery",
+
+tag_quality:
+"⭐ Premium Results",
 }
+};
+const typingWords = {
+
+    fr: [
+        "Monteur Vidéo",
+        "Motion Designer",
+        "Créateur IA",
+        "Branding Visuel",
+        "Créateur de contenu"
+    ],
+
+    en: [
+        "Video Editor",
+        "Motion Graphics Designer",
+        "AI Content Creator",
+        "Visual Branding Specialist",
+        "Content Creator"
+    ]
+
 };
 
 

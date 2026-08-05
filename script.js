@@ -1,4 +1,27 @@
+// ===========================
+// SOUNDS
+// ===========================
 
+const sounds = {
+    click: new Audio("assets/sounds/click.mp3"),
+    hover: new Audio("assets/sounds/whoosh.mp3"),
+    pop: new Audio("assets/sounds/pop.mp3")
+};
+
+sounds.click.volume = 0.18;
+sounds.hover.volume = 0.12;
+sounds.pop.volume = 0.18;
+
+function playSound(sound){
+
+    if(!sounds[sound]) return;
+
+    sounds[sound].pause();
+    sounds[sound].currentTime = 0;
+
+    sounds[sound].play().catch(()=>{});
+
+}
 // =========================
 // Scroll Portfolio
 // =========================
@@ -645,3 +668,59 @@ wordIndex=0;
 }
 
 startTyping();
+// ===========================
+// BUTTON CLICK SOUND
+// ===========================
+
+document.querySelectorAll("button").forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        playSound("click");
+
+    });
+
+});
+document.querySelectorAll(".cv-btn").forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        playSound("click");
+
+    });
+
+});
+document.querySelectorAll("#nav-menu a").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        playSound("click");
+
+    });
+
+});
+// ===========================
+// HOVER SOUND
+// ===========================
+
+let hoverCooldown = false;
+
+document.querySelectorAll(".card").forEach(card => {
+
+    card.addEventListener("mouseenter", () => {
+
+        if(hoverCooldown) return;
+
+        hoverCooldown = true;
+
+        playSound("hover");
+
+        setTimeout(()=>{
+
+            hoverCooldown = false;
+
+        },250);
+
+    });
+
+});
