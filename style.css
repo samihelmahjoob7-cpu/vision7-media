@@ -537,14 +537,25 @@ box-shadow:0 0 30px #d946ef;
 }
 
 .close-btn{
-position:absolute;
-top:20px;
-right:40px;
-font-size:50px;
-color:white;
-cursor:pointer;
-}
+    position:absolute;
+    top:20px;
+    right:30px;
 
+    background:transparent;
+    border:none;
+    width:auto;
+    height:auto;
+    padding:0;
+
+    color:#fff;
+    font-size:50px;
+    font-weight:bold;
+    line-height:1;
+
+    cursor:pointer;
+    box-shadow:none;
+    border-radius:0;
+}
 /* Light Mode */
 
 body.light-mode{
@@ -2912,4 +2923,70 @@ opacity:1;
 opacity:0;
 }
 
+}
+.whatsapp-float{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+
+    width:60px;
+    height:60px;
+
+    background:#25D366;
+    color:#fff;
+
+    border-radius:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:32px;
+
+    text-decoration:none;
+
+    box-shadow:0 8px 20px rgba(37,211,102,.4);
+
+    z-index:9999;
+
+    transition:.3s;
+}
+
+.whatsapp-float:hover{
+    transform:scale(1.1);
+}
+.contact-link{
+    color: inherit;
+    text-decoration: none;
+}
+
+.contact-link:hover{
+    color: #c84cff;
+}
+.contact-card a {
+    color: inherit;
+    text-decoration: none;
+    transition: .3s;
+}
+
+.contact-card a:hover {
+    color: #c84cff;
+}
+.contact-link{
+    color: inherit;
+    text-decoration: none;
+    transition: color .3s ease;
+}
+
+.contact-link:hover{
+    color: #c84cff; /* ولا اللون البنفسجي ديال الموقع */
+}
+.contact-link{
+    color: inherit;
+    text-decoration: none;
+    transition: .3s;
+}
+
+.contact-link:hover{
+    color: #c84cff;
 }

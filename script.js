@@ -116,27 +116,65 @@ function openVideo(videoSrc) {
 
     const modal = document.getElementById("videoModal");
     const video = document.getElementById("popupVideo");
+  const subtitleInfo = document.getElementById("subtitle-language");
+
+if (subtitleInfo) {
+    subtitleInfo.textContent =
+        currentLang === "fr"
+            ? "🌍 Sous-titre : Français"
+            : "🌍 Subtitle: English";
+}
 
     modal.style.display = "flex";
 
-    video.src = videoSrc;
+    video.pause();
+    video.innerHTML = "";
+
+    const source = document.createElement("source");
+    source.src = videoSrc;
+    source.type = "video/mp4";
+    video.appendChild(source);
+
+    const currentLang = localStorage.getItem("language") || "en";
+
+    const subtitleSrc = videoSrc
+        .replace("/videos/", "/subtitles/")
+        .replace(".mp4", `.${currentLang}.vtt`);
+console.log(subtitleSrc);
+    const track = document.createElement("track");
+    track.kind = "subtitles";
+    track.label = currentLang === "fr" ? "Français" : "English";
+    track.srclang = currentLang;
+    track.src = subtitleSrc;
+    track.default = true;
+
+    video.appendChild(track);
+
+    subtitleInfo.textContent =
+        currentLang === "fr"
+            ? "🌍 Sous-titre : Français"
+            : "🌍 Subtitle: English";
+
     video.load();
     video.play();
 
 }
-
 function closeVideo() {
-
     const modal = document.getElementById("videoModal");
     const video = document.getElementById("popupVideo");
 
     video.pause();
-    video.currentTime = 0;
+    video.removeAttribute("src");
+    video.innerHTML = "";
+    video.load();
 
     modal.style.display = "none";
-
 }
-
+document.getElementById("videoModal").addEventListener("click", function(e) {
+    if (e.target === this) {
+        closeVideo();
+    }
+});
 // =========================
 // Quand la page est chargée
 // =========================

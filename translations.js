@@ -175,6 +175,11 @@ tag_delivery:
 
 tag_quality:
 "🏆 Résultats Premium",
+laser_title:
+"Épilation Laser",
+
+laser_text:
+"Vidéo publicitaire réalisée pour promouvoir les séances d'épilation laser avec un montage moderne et des effets visuels dynamiques.",
 },
 
 
@@ -405,6 +410,11 @@ tag_delivery:
 
 tag_quality:
 "⭐ Premium Results",
+laser_title:
+"Laser Hair Removal",
+
+laser_text:
+"Promotional video showcasing professional laser hair removal services with modern editing and dynamic visual effects.",
 }
 };
 const typingWords = {
